@@ -26,39 +26,43 @@
 <meta name="twitter:description" content="Nuestra boda · Sábado 10 de octubre de 2026 · Barranquilla, Colombia">
 <meta name="twitter:image" content="https://boda-alejandra-y-douglass.vercel.app/og-image.jpg">
 
-<link rel="preload" as="image" href="portada.jpg">
+<link rel="preload" as="image" href="p02.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Pinyon+Script&family=Italiana&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Pinyon+Script&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
 :root{
-  --bg:#0A0507;
-  --surface:#140A0F;
-  --paper:#1E1015;
-  --accent:#E2A0B4;
-  --accent-soft:#D3899F;
-  --accent-deep:#F0C3D0;
-  --accent-fill:#5E1330;
-  --cream:#F8F5EC;
-  --gold:#C9A044;
-  --gold-soft:#E4C87C;
-  --gold-deep:#D4A93E;
-  --rose:#E2A0B4;
-  --rose-soft:#D3899F;
-  --ink:#F5EDE4;
-  --ink-soft:#CBB8AE;
-  --hair:rgba(245,237,228,.16);
-  --hair-gold:rgba(212,169,62,.34);
-  --display:'Playfair Display',Georgia,serif;
+  --bg:#0B0908;
+  --surface:#12100E;
+  --paper:#191512;
+  --espresso:#0B0908;
+  --espresso-deep:#070605;
+  --burgundy:#4A1122;
+  --accent:#D9C08A;
+  --accent-soft:#C4A96F;
+  --accent-deep:#F3EDE1;
+  --accent-fill:#4A1122;
+  --cream:#F7F3EA;
+  --ivory:#F3EDE1;
+  --gold:#C0A063;
+  --gold-soft:#DFC993;
+  --gold-deep:#CBAE72;
+  --rose:#D9C08A;
+  --rose-soft:#C4A96F;
+  --ink:#F3EDE1;
+  --ink-soft:#C9BEAE;
+  --hair:rgba(243,237,225,.14);
+  --hair-gold:rgba(203,174,114,.30);
+  --display:'Bodoni Moda',Didot,Georgia,serif;
   --serif:'Cormorant Garamond',Georgia,serif;
   --script:'Pinyon Script',cursive;
-  --italiana:'Italiana',serif;
+  --italiana:'Cormorant Garamond',Georgia,serif;
   --sans:'Inter Tight',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#0A0507}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#0B0908}
 body{
   font-family:var(--sans);
   font-size:16px;line-height:1.8;
@@ -180,12 +184,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 .hero-bg-overlay{
   position:absolute;inset:0;z-index:-1;
   background:
-    radial-gradient(ellipse at center top, transparent 20%, rgba(20,30,50,.45) 70%),
+    radial-gradient(ellipse at 50% 62%, rgba(11,9,8,.62) 0%, rgba(11,9,8,.28) 45%, transparent 78%),
     linear-gradient(180deg,
-      rgba(20,30,50,.55) 0%,
-      rgba(20,30,50,.12) 35%,
-      rgba(20,30,50,.12) 55%,
-      rgba(20,30,50,.75) 100%);
+      rgba(11,9,8,.72) 0%,
+      rgba(11,9,8,.30) 30%,
+      rgba(11,9,8,.42) 62%,
+      rgba(11,9,8,.92) 100%);
 }
 .hero-frame{
   position:absolute;inset:clamp(28px,4vw,56px);z-index:-1;
@@ -282,7 +286,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 }
 
 /* ============ DARK MODE — refuerzos ============ */
-.loc-card,.cd-block,.fam-2col,.dress-desc-card,.gift-card{
+.loc-card{
   box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 18px 48px -18px rgba(0,0,0,.85),0 0 24px -10px rgba(201,160,68,.28) !important;
 }
 .dress-fig img{
@@ -315,30 +319,6 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 .section-paper{background:var(--paper);padding:min(18vh,170px) 0;position:relative;contain:layout paint}
 
 /* ============ VERSO ============ */
-.verse-wrap{text-align:center;max-width:820px;margin:0 auto}
-.verse-ornament{display:block;margin:0 auto 40px;width:min(300px,55vw);height:auto}
-.verse-quote{
-  font-family:var(--script);
-  font-size:clamp(96px,12vw,148px);
-  color:var(--gold);line-height:.5;
-  margin-bottom:36px;display:block;opacity:.8;
-}
-.verse-text{
-  font-family:var(--display);font-style:italic;font-weight:400;
-  font-size:clamp(24px,3.2vw,38px);line-height:1.45;
-  color:var(--accent-deep);letter-spacing:-.01em;margin-bottom:48px;
-}
-.verse-text .word{display:inline-block}
-.verse-sig{
-  font-family:var(--script);font-size:36px;color:var(--gold);
-  position:relative;display:inline-block;padding:0 32px;
-}
-.verse-sig::before,.verse-sig::after{
-  content:"";position:absolute;top:50%;width:24px;height:1px;background:var(--gold);
-}
-.verse-sig::before{left:-12px}
-.verse-sig::after{right:-12px}
-
 .mono-wm{
   font-family:var(--script);
   font-size:clamp(160px,26vw,360px);
@@ -354,7 +334,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 /* ============ FECHA HERO ============ */
 .date-hero{
   position:relative;padding:min(22vh,220px) 0;
-  background:#3F0C21;
+  background:linear-gradient(180deg,#0B0908 0%,#141010 48%,#0B0908 100%);
   color:#F8F5EC;text-align:center;isolation:isolate;overflow:hidden;
 }
 /* Capa de imagen con mask — difumina top/bottom */
@@ -362,10 +342,10 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
   content:"";position:absolute;inset:0;z-index:0;
   background:
     linear-gradient(to bottom,
-      rgba(85,16,41,.32) 0%,
-      rgba(85,16,41,.14) 50%,
-      rgba(85,16,41,.32) 100%),
-    url('foto2.jpg') center 22%/cover no-repeat;
+      rgba(11,9,8,.72) 0%,
+      rgba(11,9,8,.56) 50%,
+      rgba(11,9,8,.72) 100%),
+    url('p10.jpg') center 40%/cover no-repeat;
   mask-image:linear-gradient(to bottom,
     transparent 0%,
     rgba(0,0,0,.15) 15%,
@@ -403,28 +383,6 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
   letter-spacing:-.015em;margin-bottom:12px;
 }
 .date-h em{color:var(--gold-soft)}
-.date-numbers{
-  display:flex;justify-content:center;align-items:flex-start;
-  gap:clamp(24px,6vw,80px);font-variant-numeric:tabular-nums;margin:56px 0 28px;
-}
-.date-block{text-align:center;position:relative}
-.date-block + .date-block::before{
-  content:"·";position:absolute;left:calc(-1 * clamp(24px,6vw,80px) / 2);top:40%;
-  transform:translateX(-50%);color:var(--gold-soft);font-size:30px;
-}
-.date-num{
-  font-family:var(--display);font-style:italic;font-weight:700;
-  font-size:clamp(68px,10vw,124px);line-height:1;color:#F8F5EC;
-}
-.date-lbl{
-  font-family:var(--sans);font-size:10px;letter-spacing:.55em;
-  text-transform:uppercase;color:rgba(248,245,236,.8);margin-top:18px;padding-left:.55em;font-weight:400;
-}
-.date-roman{
-  font-family:var(--italiana);
-  font-size:16px;letter-spacing:.4em;color:var(--gold-soft);
-  margin-top:32px;padding-left:.4em;
-}
 
 /* ============ HISTORIA ============ */
 .story{max-width:860px;margin:0 auto;text-align:center}
@@ -435,17 +393,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
   line-height:1.85;color:var(--ink);margin-bottom:40px;
 }
 .story-body p{margin-bottom:28px}
-.story-body p:first-child{text-align:left}
-.story-initials{
-  font-family:var(--script);font-size:96px;
-  color:var(--gold);margin-top:56px;line-height:1;
-  display:inline-block;position:relative;
-}
-.story-initials::before,.story-initials::after{
-  content:"";position:absolute;top:50%;width:40px;height:1px;
-}
-.story-initials::before{left:-60px;background:linear-gradient(to right, transparent, var(--gold))}
-.story-initials::after{right:-60px;background:linear-gradient(to left, transparent, var(--gold))}
+.story-body p:first-child{text-align:center}
 
 /* ============ FAMILIAS / PADRINOS ============ */
 .fam-wrap{max-width:640px;margin:64px auto 0;display:flex;flex-direction:column;gap:28px}
@@ -587,35 +535,6 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 .dress-fig-label{font-family:var(--script);font-size:22px;color:var(--accent-deep)}
 .dress-fig-sub{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-top:-6px}
 .dress-fig-sep{width:1px;align-self:stretch;min-height:120px;background:linear-gradient(180deg,transparent,var(--hair-gold) 18%,var(--hair-gold) 82%,transparent)}
-.dress-desc-btn{
-  display:inline-block;margin:0 auto 44px;padding:13px 30px;
-  border:1px solid var(--accent-deep);background:transparent;
-  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;
-  color:var(--accent-deep);cursor:pointer;border-radius:999px;transition:background .3s,color .3s;
-}
-.dress-desc-btn:hover,.dress-desc-btn[aria-expanded="true"]{background:var(--accent-fill);color:var(--gold-soft)}
-.dress-desc-card{
-  position:relative;max-width:520px;margin:0 auto 44px;padding:38px 32px 30px;
-  background:var(--paper);border:1px solid var(--hair-gold);border-radius:2px;
-  box-shadow:0 20px 50px -20px rgba(85,16,41,.3);
-  animation:dressDescIn .35s ease-out;
-}
-@keyframes dressDescIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-.dress-desc-close{
-  position:absolute;top:10px;right:14px;width:28px;height:28px;
-  border:none;background:none;color:var(--accent-deep);font-size:22px;line-height:1;
-  cursor:pointer;font-family:var(--sans);
-}
-.dress-desc-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;text-align:left}
-.dress-desc-col{border-left:1px solid var(--hair-gold);padding-left:20px}
-.dress-desc-col:first-child{border-left:none;padding-left:0}
-.dress-desc-col-title{display:block;font-family:var(--script);font-size:20px;color:var(--gold-deep);margin-bottom:10px}
-.dress-desc-col p{font-family:var(--serif);font-size:14px;line-height:1.7;color:var(--ink-soft);margin:0}
-@media(max-width:480px){
-  .dress-desc-cols{grid-template-columns:1fr;gap:22px}
-  .dress-desc-col{border-left:none;padding-left:0;border-top:1px solid var(--hair-gold);padding-top:18px}
-  .dress-desc-col:first-child{border-top:none;padding-top:0}
-}
 .dress-rental{font-family:var(--sans);font-weight:400;font-size:13px;line-height:1.7;color:var(--ink-soft);max-width:520px;margin:22px auto 0;opacity:.85}
 .swatch{text-align:center}
 .swatch-c{
@@ -862,7 +781,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 
 /* ============ FOOTER ============ */
 footer{
-  background:linear-gradient(180deg, #3A0B1E 0%, #0A0507 100%);
+  background:linear-gradient(180deg,#141010 0%,#070605 100%);
   color:#E6ECF5;padding:min(14vh,130px) 0 52px;text-align:center;
   position:relative;overflow:hidden;
 }
@@ -910,11 +829,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 @media (max-width:720px){
   .hero-name{font-size:72px}
   .hero-and{font-size:60px}
-  .date-numbers{gap:28px}
   .locs-grid{gap:32px}
-  .story-initials::before,.story-initials::after{width:24px}
-  .story-initials::before{left:-40px}
-  .story-initials::after{right:-40px}
   .seam{height:60px}
 }
 @media (max-width:480px){
@@ -1210,6 +1125,247 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   .vinyl-btn.is-playing .vinyl-spin{animation:none}
   .vinyl-btn::after{animation:none}
 }
+
+/* ================= DEPURACION EDITORIAL - Old World / espresso ================= */
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em;color:var(--ivory)}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:400;color:var(--gold-soft)}
+.eyebrow,.date-eyebrow{
+  font-family:var(--sans);font-weight:400;font-size:12px;line-height:1.6;
+  letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft);
+  padding-left:.42em;opacity:.95;
+}
+/* La caligrafia queda SOLO en dos lugares: "nuestra historia" y el nombre del footer */
+.countdown-sub,.itinerary-sub,.gallery-sub,.dress-sub,.locs-sub,.env-title,.dress-fig-label,
+.gal-hint,.env-tap-hint{
+  font-family:var(--sans)!important;font-weight:400!important;
+  font-size:12px!important;line-height:1.6!important;letter-spacing:.34em!important;
+  text-transform:uppercase!important;color:var(--gold-soft)!important;padding-left:.34em;
+}
+.countdown-sub,.itinerary-sub,.gallery-sub{margin-bottom:56px!important}
+.dress-sub{margin-bottom:56px!important}
+.locs-sub{margin-bottom:64px!important}
+.env-title{font-size:13px!important;color:var(--ivory)!important;letter-spacing:.3em!important}
+.hair-word span{font-family:var(--script);font-size:26px;color:var(--gold-soft);opacity:.95}
+.footer-names{font-family:var(--script)}
+
+/* --- FECHA UNIFICADA --- */
+.date-hero{padding:min(20vh,190px) 0}
+.date-h{color:var(--ivory);margin-bottom:44px}
+.date-h em{color:var(--gold-soft)}
+.date-line{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;
+  gap:clamp(10px,2.4vw,22px);
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(20px,3.4vw,34px);line-height:1.5;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ivory);
+  font-variant-numeric:tabular-nums;padding:0 16px;
+}
+.date-line i{font-style:normal;color:var(--gold-soft);opacity:.85}
+.date-line-num{font-style:italic;color:var(--gold-soft)}
+.date-place-lbl{
+  margin-top:34px;font-family:var(--sans);font-weight:400;font-size:13px;line-height:1.6;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);padding-left:.26em;
+}
+
+/* --- HISTORIA editorial --- */
+.story h2{margin-bottom:48px}
+.story-body{margin-bottom:0}
+.story-lede{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(23px,3.4vw,40px);line-height:1.55;
+  color:var(--ivory);letter-spacing:-.005em;margin:0 auto;max-width:24ch;
+}
+.story-lede-sub{
+  margin-top:44px;font-family:var(--sans);font-weight:400;font-size:12px;line-height:1.6;
+  letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft);padding-left:.42em;
+}
+.story-monogram{display:block;width:clamp(74px,11vw,104px);height:auto;margin:64px auto 0;opacity:.9}
+.story--close{padding-top:8px}
+.story-close{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(19px,2.4vw,26px);line-height:1.7;color:var(--ink);
+  max-width:32ch;margin:0 auto;
+}
+.story-thanks{
+  margin-top:34px;font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(22px,3vw,32px);line-height:1.5;color:var(--gold-soft);
+}
+.mono-wm{
+  width:clamp(300px,46vw,620px);height:auto;opacity:.05;
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;user-select:none;z-index:0;
+}
+
+/* --- PADRES / PADRINOS: editorial, sin cajas --- */
+.fam-wrap{max-width:760px;margin:96px auto 0;gap:0}
+.fam-heading{
+  font-family:var(--sans);font-weight:400;font-size:12px;line-height:1.6;
+  letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft);
+  padding-left:.42em;text-align:center;margin-bottom:64px;
+}
+.fam-2col{
+  background:none!important;border:none!important;border-radius:0!important;
+  padding:0!important;margin-bottom:72px;gap:clamp(24px,5vw,56px);
+}
+.fam-2col::before{display:none!important}
+.fam-role-lbl{
+  font-family:var(--sans);font-style:normal;font-weight:400;font-size:11px;line-height:1.6;
+  letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);
+  padding-left:.34em;margin-bottom:22px;
+}
+.fam-name{
+  font-family:var(--display);font-weight:400;font-size:clamp(18px,2.2vw,22px);
+  line-height:1.55;letter-spacing:.005em;color:var(--ivory);
+}
+.fam-and{margin:14px auto;max-width:64px}
+.fam-and-line{background:var(--hair-gold);opacity:.7}
+.fam-and-txt{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold-soft)}
+.fam-divider{background:linear-gradient(to bottom,transparent,var(--hair-gold),transparent);opacity:1}
+.fam-title{
+  font-family:var(--sans)!important;font-style:normal!important;
+  font-size:12px!important;line-height:1.6!important;letter-spacing:.42em!important;
+  text-transform:uppercase!important;color:var(--gold-soft)!important;
+  padding-left:.42em;margin-bottom:56px!important;
+}
+@media(max-width:480px){.fam-2col{padding:0!important;gap:36px}}
+
+/* --- PAUSAS CINEMATOGRAFICAS --- */
+.cine{
+  position:relative;width:100vw;left:50%;margin-left:-50vw;
+  height:clamp(58vh,78vh,86vh);overflow:hidden;background:var(--espresso);
+  display:flex;align-items:center;justify-content:center;
+}
+.cine img,.cine video{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.cine--video{height:clamp(52vh,66vh,74vh)}
+.cine--video video{object-position:center 38%}
+.cine-veil{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,var(--espresso) 0%,rgba(11,9,8,.12) 22%,rgba(11,9,8,.18) 62%,rgba(11,9,8,.86) 92%,var(--espresso) 100%);
+}
+.cine-caption{
+  position:absolute;left:0;right:0;bottom:clamp(42px,9vh,90px);
+  display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;
+  padding:0 24px;
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(21px,3.1vw,34px);line-height:1.5;
+  color:#FFFBF3;text-shadow:0 2px 26px rgba(0,0,0,.9),0 1px 4px rgba(0,0,0,.8);
+}
+.detail-band{
+  width:100vw;left:50%;margin-left:-50vw;position:relative;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--espresso);
+}
+.detail-band img{width:100%;height:clamp(170px,30vw,340px);object-fit:cover;display:block;opacity:.92}
+@media(max-width:560px){.detail-band{grid-template-columns:1fr 1fr}.detail-band img:last-child{display:none}}
+
+/* --- ITINERARIO minimalista: linea fina dorada, sin tarjetas --- */
+.itin-card{
+  background:none!important;border:none!important;border-radius:0!important;
+  padding:0!important;box-shadow:none!important;max-width:420px;
+}
+.itin-card::before,.itin-card::after{display:none!important}
+.itin-track-glow,.itin-track-shimmer{display:none!important}
+.itin-track-mid{left:-2px;width:4px;filter:blur(3px);opacity:.45}
+.itin-track-fill{left:-.5px;width:1px}
+.itin-events{gap:clamp(48px,8vh,92px)}
+.itin-marker{width:7px;height:7px;border-width:1px;margin-bottom:24px}
+.itin-event.is-active .itin-marker{box-shadow:0 0 5px 1px color-mix(in srgb,var(--gold-soft) 60%,transparent)}
+.itin-event.is-active .itin-marker::before,.itin-event.is-active .itin-marker::after{display:none}
+.itin-time{
+  font-family:var(--display)!important;font-style:italic;
+  font-size:clamp(22px,2.9vw,30px)!important;color:var(--gold-soft)!important;
+  line-height:1.4;margin-bottom:12px;
+}
+.itin-event.is-active .itin-time{color:var(--gold-soft)!important}
+.itin-name{
+  font-family:var(--display)!important;font-size:clamp(20px,2.6vw,26px)!important;
+  text-transform:none!important;letter-spacing:.01em!important;line-height:1.4;
+  color:var(--ivory)!important;font-weight:400!important;padding-left:0!important;
+}
+.itin-venue{
+  font-family:var(--sans)!important;font-weight:400!important;font-size:12px!important;
+  letter-spacing:.3em!important;text-transform:uppercase;color:var(--gold-soft)!important;
+  margin-top:14px!important;line-height:1.6;
+}
+.itin-desc{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--ink-soft);opacity:1;margin-top:12px;max-width:34ch;margin-left:auto;margin-right:auto}
+.itin-event.is-active .itin-card{background:none!important;border:none!important;box-shadow:none!important}
+
+/* --- DRESS CODE: revista de moda --- */
+.dress-figures{gap:clamp(24px,6vw,72px);margin-bottom:72px}
+.dress-fig-label{
+  display:block;font-family:var(--display)!important;font-style:italic;
+  font-size:clamp(26px,4vw,40px)!important;letter-spacing:.02em!important;
+  text-transform:none!important;color:var(--gold-soft)!important;
+  margin-bottom:22px;padding-left:0!important;line-height:1.3!important;
+}
+.dress-fig-sub{
+  display:block;margin-top:22px;font-family:var(--sans);font-weight:400;
+  font-size:13px;line-height:1.6;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.dress-avoid-title{
+  font-family:var(--sans);font-weight:400;font-size:11px;line-height:1.6;
+  letter-spacing:.36em;text-transform:uppercase;color:var(--ink-soft);
+  padding-left:.36em;margin-bottom:26px;opacity:.9;
+}
+.dress-avoid-row{gap:clamp(18px,5vw,44px)}
+.avoid-swatch-c{width:26px!important;height:26px!important;border-radius:50%!important}
+.swatch-n{font-family:var(--sans);font-size:11px;line-height:1.6;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.dress-rental{font-size:14px!important;line-height:1.7!important;color:var(--ink-soft)!important;opacity:1!important;margin-top:44px!important}
+
+/* --- Menos brillo decorativo --- */
+.rosette,.washi,.gal-header-ornament,.footer-ornament,.rsvp-ornament{opacity:.4}
+.hero-ornament-top{opacity:.55}
+
+/* --- Legibilidad --- */
+body{font-weight:400}
+.kids-text,.album-text,.rsvp-text,.gifts-sub,.env-desc{font-family:var(--serif);font-size:18px;line-height:1.7;color:var(--ink)}
+@media(max-width:480px){
+  .cine{height:64vh}
+  .cine-caption{font-size:20px;bottom:34px}
+  .story-lede{max-width:none}
+}
+
+/* --- CORRECCIONES DE MAQUETA --- */
+.itin-wrap{max-width:560px;padding-left:0;padding-right:0}
+.itin-track{left:9px;right:auto}
+.itin-event{align-items:flex-start;flex-direction:row;gap:26px}
+.itin-marker{margin-bottom:0;margin-top:10px}
+.itin-card{text-align:left;max-width:none;flex:1}
+.itin-desc{margin-left:0;margin-right:0;max-width:38ch}
+.itin-events{padding-left:2px}
+@media(max-width:400px){.itin-event{gap:18px}.itin-desc{font-size:16px}}
+
+.countdown-grid{display:grid!important;grid-template-columns:repeat(4,1fr);gap:clamp(8px,2vw,20px);max-width:560px;margin:0 auto}
+.cd-block{min-width:0!important;padding:22px 6px!important}
+.cd-num{font-size:clamp(28px,7.5vw,58px)!important}
+.cd-lbl{font-size:9px;letter-spacing:.2em;padding-left:.2em}
+
+.fam-single{grid-template-columns:1fr!important;max-width:420px!important}
+
+.cine-caption::before{
+  content:"";position:absolute;left:-24px;right:-24px;top:-46px;bottom:-90px;z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(8,6,5,.82) 0%,rgba(8,6,5,.62) 55%,transparent 100%);
+}
+.cine-caption{isolation:isolate}
+
+.dress-figures{max-width:560px}
+.dress-fig img{height:clamp(230px,42vw,320px)!important;filter:drop-shadow(0 14px 30px rgba(0,0,0,.5))}
+.dress-fig{gap:0}
+.cine--video{height:auto!important;padding:clamp(56px,10vh,110px) 20px;background:var(--espresso)}
+.cine--video video{
+  width:min(86vw,540px);height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 42%;
+  border:1px solid var(--hair-gold);
+}
+.cine--video .cine-veil{display:none}
+/* --- ultimos ajustes --- */
+.gal-hint,.env-tap-hint{font-style:normal!important}
+.detail-band{grid-template-columns:1fr 1fr!important}
+.detail-band img:last-child{display:none}
+@media(min-width:700px){.detail-band{grid-template-columns:repeat(3,1fr)!important}.detail-band img:last-child{display:block}}
+.rsvp-card{background:rgba(18,15,13,.94)!important;border-color:rgba(203,174,114,.38)!important;box-shadow:0 24px 64px rgba(0,0,0,.6),0 0 22px -8px rgba(192,160,99,.18)!important}
+.rsvp-card::before{border-color:rgba(203,174,114,.2)!important}
+.rsvp-btn{background:linear-gradient(135deg,#5E1730 0%,#3A0E1E 100%)!important;box-shadow:0 6px 20px rgba(0,0,0,.45)!important}
+.album-qr img{border-radius:2px}
 </style>
 </head>
 <body>
@@ -1252,7 +1408,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="vinyl-spin">
     <div class="vinyl-disc">
       <div class="vinyl-sheen"></div>
-      <div class="vinyl-label-text">A&amp;D<small>2026</small></div>
+      <div class="vinyl-label-text">D&amp;A<small>2026</small></div>
       <div class="vinyl-hole"></div>
     </div>
   </div>
@@ -1266,7 +1422,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg-wrap"><img class="hero-bg" src="portada.jpg" alt="Alejandra y Douglass" loading="eager" fetchpriority="high"></div>
+    <div class="hero-bg-wrap"><img class="hero-bg" src="p02.jpg" alt="Alejandra y Douglass" loading="eager" fetchpriority="high"></div>
     <div class="hero-bg-overlay"></div>
     <div class="hero-frame"></div>
     <div class="hero-frame-corners"></div>
@@ -1288,89 +1444,70 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         <span class="hero-name-l" data-split="Douglass"></span>
       </h1>
       <div class="hero-date" data-anim="hero-date">
-        <span>10</span><span class="sep">·</span><span>Octubre</span><span class="sep">·</span><span>2026</span>
+        <span>Sábado</span><span class="sep">·</span><span>10</span><span class="sep">·</span><span>Octubre</span><span class="sep">·</span><span>2026</span>
       </div>
       <div class="hero-place" data-anim="hero-place">Barranquilla · Colombia</div>
     </div>
     <div class="hero-scroll">Descubre</div>
   </section>
 
-  <!-- DIVIDER: bg → surface -->
   <div class="seam" style="--from:transparent;--to:var(--surface)" aria-hidden="true"></div>
 
-  <!-- VERSO -->
-  <section class="section-surface">
-    <div class="container">
-      <div class="verse-wrap">
-        <svg class="verse-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
-          <g stroke="var(--gold)" stroke-width=".9" opacity=".75" fill="none">
-            <path d="M30 40 Q70 18 110 40 Q140 58 170 40"/>
-            <path d="M190 40 Q220 58 250 40 Q290 18 330 40"/>
-            <circle cx="180" cy="40" r="4" stroke="var(--gold)"/>
-            <circle cx="180" cy="40" r="1.5" fill="var(--gold)" stroke="none"/>
-            <path d="M175 28 Q180 20 185 28" opacity=".7"/>
-            <path d="M175 52 Q180 60 185 52" opacity=".7"/>
-            <path d="M10 40 L30 40" opacity=".5"/>
-            <path d="M330 40 L350 40" opacity=".5"/>
-          </g>
-        </svg>
-        <span class="verse-quote">&ldquo;</span>
-        <p class="verse-text">Hay historias que parecen comenzar por casualidad, hasta que el tiempo revela que siempre fueron parte del plan de Dios.</p>
-        <div class="verse-sig">Alejandra &amp; Douglass</div>
-      </div>
-    </div>
-  </section>
-
   <!-- DIVIDER: surface → bg-image backdrop (use surface→accent-deep for drama) -->
-  <div class="seam" style="--from:var(--surface);--to:#3F0C21" aria-hidden="true"></div>
+  <div class="seam" style="--from:var(--surface);--to:#0B0908" aria-hidden="true"></div>
 
   <!-- FECHA HERO -->
   <section class="date-hero">
     <div class="container">
       <div class="date-eyebrow" data-anim="date-eb">Reserva la fecha</div>
       <h2 class="date-h">Nuestro <em>gran</em> día</h2>
-      <div class="date-numbers">
-        <div class="date-block">
-          <div class="date-num" data-count-to="10">0</div>
-          <div class="date-lbl">Octubre</div>
-        </div>
-        <div class="date-block">
-          <div class="date-num" data-count-to="2026">0</div>
-          <div class="date-lbl">Sábado</div>
-        </div>
+      <div class="date-line">
+        <span>Sábado</span><i>·</i><span class="date-line-num">10</span><i>·</i><span>Octubre</span><i>·</i><span>2026</span>
       </div>
-      <div class="date-roman">X · X · 2026</div>
+      <div class="date-place-lbl">Hotel Majestic · Barranquilla, Colombia</div>
     </div>
   </section>
 
   <!-- DIVIDER: date-hero dark → surface -->
-  <div class="seam seam-monogram" style="--from:#3F0C21;--to:var(--surface)" aria-hidden="true">
+  <div class="seam seam-monogram" style="--from:#0B0908;--to:var(--surface)" aria-hidden="true">
     <img class="seam-monogram-img" src="monograma.png" alt="" loading="lazy">
   </div>
 
+  <section class="cine">
+    <img src="p09.jpg" alt="Alejandra y Douglass abrazados frente al mar" loading="lazy" decoding="async">
+    <div class="cine-veil" aria-hidden="true"></div>
+  </section>
+
   <!-- HISTORIA -->
   <section class="section-surface">
-    <span class="mono-wm" aria-hidden="true">D &amp; A</span>
+    <img class="mono-wm" src="monograma.png" alt="" aria-hidden="true" loading="lazy">
     <div class="container">
       <div class="story">
-        <svg class="story-ornament" viewBox="0 0 100 40" fill="none" aria-hidden="true">
-          <g stroke="var(--gold)" stroke-width="1" fill="none" opacity=".7">
-            <path d="M10 20 Q30 10 50 20 Q70 30 90 20"/>
-            <circle cx="50" cy="20" r="2" fill="var(--gold)" stroke="none"/>
-          </g>
-        </svg>
         <div class="hair-word"><span>nuestra historia</span></div>
         <h2>Un nuevo <em>capítulo</em> juntos</h2>
         <div class="story-body">
-          <p class="drop-cap" data-reveal="line">Hay encuentros que parecen casualidad, hasta que el tiempo nos revela que siempre fue Dios.</p>
-          <p data-reveal="line">Nos encontramos, nos elegimos y hoy, después de tantos momentos que ya son parte de nuestra historia, estamos a punto de decir para siempre.</p>
-          <p data-reveal="line">Y qué bonito poder vivirlo rodeados de quienes también han sido parte del camino.</p>
-          <p data-reveal="line">Gracias por estar aquí. Nuestra historia también guarda un pedacito de ustedes.</p>
-          <p data-reveal="line">Con la bendición de nuestros padres&hellip;</p>
+          <p class="story-lede" data-reveal="line">Hay historias que parecen comenzar por casualidad,<br>hasta que el tiempo revela<br>que siempre fueron parte del plan de Dios.</p>
+          <p class="story-lede-sub" data-reveal="line">Esta es la nuestra.</p>
         </div>
-        <div class="story-initials">D &amp; A</div>
+        <img class="story-monogram" src="monograma.png" alt="Monograma Alejandra y Douglass" loading="lazy">
 
+      </div>
+    </div>
+  </section>
+
+  <section class="cine">
+    <img src="p06.jpg" alt="Alejandra y Douglass caminando de la mano al borde del acantilado" loading="lazy" decoding="async">
+    <div class="cine-veil" aria-hidden="true"></div>
+    <div class="cine-caption"><span>Nos encontramos.</span><span>Nos elegimos.</span><span>Y ahora elegimos para siempre.</span></div>
+  </section>
+
+  <section class="section-surface">
+    <div class="container">
+      <div class="story story--close">
+        <p class="story-close" data-reveal="line">Qué bonito vivirlo rodeados<br>de quienes también han sido parte del camino.</p>
+        <p class="story-thanks" data-reveal="line">Gracias por estar aquí.</p>
         <div class="fam-wrap">
+          <div class="fam-heading">Con la bendición de nuestros padres</div>
           <div class="fam-2col">
             <div class="fam-col">
               <span class="fam-role-lbl">Padres del novio</span>
@@ -1483,9 +1620,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <!-- DIVIDER: surface → paper (hacia itinerario) -->
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
 
+  <section class="cine">
+    <img src="p04.jpg" alt="Douglass carga a Alejandra bajo un arco colonial" loading="lazy" decoding="async">
+    <div class="cine-veil" aria-hidden="true"></div>
+  </section>
+
   <!-- ITINERARIO -->
   <section class="section-paper itinerary">
-    <span class="mono-wm" aria-hidden="true">D &amp; A</span>
+    <img class="mono-wm" src="monograma.png" alt="" aria-hidden="true" loading="lazy">
     <div class="container">
       <div class="eyebrow">Itinerario</div>
       <h2>El <em>recorrido</em> de la noche</h2>
@@ -1562,47 +1704,38 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="container">
       <div class="eyebrow">Código de vestimenta</div>
       <h2>Old World <em>Elegance</em></h2>
-      <div class="dress-sub">etiqueta formal</div>
-      <button type="button" class="dress-desc-btn" id="dress-desc-btn" aria-expanded="false" aria-controls="dress-desc-card">Ver descripción</button>
-      <div class="dress-desc-card" id="dress-desc-card" hidden>
-        <button type="button" class="dress-desc-close" id="dress-desc-close" aria-label="Cerrar descripción">&times;</button>
-        <div class="dress-desc-cols">
-          <div class="dress-desc-col">
-            <span class="dress-desc-col-title">Caballeros</span>
-            <p>Traje entero<br>Camisa blanca<br>Corbata negra<br>Zapatos negros formales</p>
-          </div>
-          <div class="dress-desc-col">
-            <span class="dress-desc-col-title">Damas</span>
-            <p>Vestido largo de gala<br>Estilo Old World Elegance<br>Colores lisos y elegantes</p>
-          </div>
-        </div>
-      </div>
+      <div class="dress-sub">Black Tie Preferred</div>
       <div class="dress-figures">
         <div class="dress-fig">
-          <img src="caballero.png" alt="Caballero, traje formal" loading="lazy">
-          <span class="dress-fig-label">Caballeros</span>
-          <span class="dress-fig-sub">traje formal</span>
+          <span class="dress-fig-label">Her</span>
+          <img src="dama.png" alt="Dama, vestido largo de gala" loading="lazy">
+          <span class="dress-fig-sub">Vestido largo de gala</span>
         </div>
         <div class="dress-fig-sep" aria-hidden="true"></div>
         <div class="dress-fig">
-          <img src="dama.png" alt="Dama, vestido de gala" loading="lazy">
-          <span class="dress-fig-label">Damas</span>
-          <span class="dress-fig-sub">vestido de gala</span>
+          <span class="dress-fig-label">Him</span>
+          <img src="caballero.png" alt="Caballero, traje formal negro" loading="lazy">
+          <span class="dress-fig-sub">Traje entero negro, camisa blanca</span>
         </div>
       </div>
-      <p class="dress-avoid-title">Favor de evitar estos tonos</p>
+      <p class="dress-avoid-title">Tonos reservados</p>
       <div class="dress-avoid-row">
         <div class="swatch avoid-swatch"><div class="swatch-c avoid-swatch-c" style="background:#fff2d5"></div><div class="swatch-n">Crema</div></div>
         <div class="swatch avoid-swatch"><div class="swatch-c avoid-swatch-c" style="background:#FFFFFF"></div><div class="swatch-n">Blanco</div></div>
         <div class="swatch avoid-swatch"><div class="swatch-c avoid-swatch-c" style="background:#551029"></div><div class="swatch-n">Vino</div></div>
         <div class="swatch avoid-swatch"><div class="swatch-c avoid-swatch-c" style="background:#011d57"></div><div class="swatch-n">Azul noche</div></div>
       </div>
-      <p class="dress-rental">Los caballeros pueden alquilar traje completo (incluye zapatos) en <b>SOLO NOVIAS</b>, Calle 75 #47-25 — menciona que asistes a la boda de Douglass &amp; Alejandra para tu descuento.</p>
+      <p class="dress-rental">Alquiler de traje completo en <b>SOLO NOVIAS</b> · Calle 75 #47-25 — menciona la boda de Douglass &amp; Alejandra para tu descuento.</p>
     </div>
   </section>
 
   <!-- DIVIDER: bg → surface -->
   <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
+
+  <section class="cine cine--video">
+    <video src="video-novios.mp4" poster="video-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Alejandra y Douglass"></video>
+    <div class="cine-veil" aria-hidden="true"></div>
+  </section>
 
   <!-- GALLERY — CARRUSEL 3D (drag para girar) -->
   <section class="section-surface gallery">
@@ -1614,12 +1747,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
     <div class="wheel-scene" id="wheel-scene">
       <div class="wheel-ring" id="wheel-ring">
-        <div class="wheel-card"><img src="foto1.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+<div class="wheel-card"><img src="p01.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+        <div class="wheel-card"><img src="p07.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+        <div class="wheel-card"><img src="p09.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+        <div class="wheel-card"><img src="p03.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+        <div class="wheel-card"><img src="p10.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+        <div class="wheel-card"><img src="p05.jpg" alt="Alejandra y Douglass" loading="eager"></div>
         <div class="wheel-card"><img src="foto2.jpg" alt="Alejandra y Douglass" loading="eager"></div>
-        <div class="wheel-card"><img src="foto3.jpg" alt="Alejandra y Douglass" loading="eager"></div>
         <div class="wheel-card"><img src="foto4.jpg" alt="Alejandra y Douglass" loading="eager"></div>
-        <div class="wheel-card"><img src="foto5.jpg" alt="Alejandra y Douglass" loading="eager"></div>
-        <div class="wheel-card"><img src="foto6.jpg" alt="Alejandra y Douglass" loading="eager"></div>
       </div>
     </div>
     <p class="gal-hint">Arrastra para girar</p>
@@ -1674,7 +1809,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             <line x1="110" y1="18" x2="110" y2="10" stroke="var(--gold-soft)" stroke-width="1" stroke-linecap="round" opacity=".4"/>
             <line x1="150" y1="18" x2="150" y2="10" stroke="var(--gold-soft)" stroke-width="1" stroke-linecap="round" opacity=".4"/>
             <circle cx="130" cy="118" r="16" fill="color-mix(in srgb, var(--gold) 14%, transparent)" stroke="var(--gold)" stroke-width="1"/>
-            <text x="130" y="123" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="11" fill="var(--accent-deep)" opacity=".85">A&amp;D</text>
+            <text x="130" y="123" text-anchor="middle" font-family="Bodoni Moda,Didot,Georgia,serif" font-size="11" fill="var(--gold-soft)" opacity=".9">D&amp;A</text>
           </svg>
           <div class="env-flap-wrap" aria-hidden="true">
             <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
@@ -1708,6 +1843,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <!-- DIVIDER: surface → bg -->
   <div class="seam" style="--from:var(--surface);--to:var(--bg)" aria-hidden="true"></div>
 
+  <section class="detail-band" aria-label="Detalles de la sesión">
+    <img src="p08.jpg" alt="Detalle: la mano de Alejandra sobre el pecho de Douglass" loading="lazy" decoding="async">
+    <img src="p05.jpg" alt="Detalle: la mano de Alejandra en la nuca de Douglass" loading="lazy" decoding="async">
+    <img src="p03.jpg" alt="Detalle: las manos de Alejandra con el anillo" loading="lazy" decoding="async">
+  </section>
+
   <!-- ALBUM QR -->
   <section class="section-bg album">
     <div class="container album-inner">
@@ -1715,7 +1856,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <h2>Comparte <em>tus</em> fotos con nosotros</h2>
       <p class="album-text">Escanea el código QR con tu cámara para subir tus fotos al álbum del evento. Queremos vivir el día desde tus ojos también.</p>
       <div class="album-qr" id="qr-wrap">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=551029&bgcolor=FFF2D5&margin=4&data=https%3A%2F%2Fphotos.app.goo.gl%2Falejandra-douglass-2026" alt="Código QR para álbum compartido" width="300" height="300" loading="lazy">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=1A1512&bgcolor=F3EDE1&margin=4&data=https%3A%2F%2Fphotos.app.goo.gl%2Falejandra-douglass-2026" alt="Código QR para álbum compartido" width="300" height="300" loading="lazy">
       </div>
       <br>
       <a class="album-link" href="https://photos.app.goo.gl/alejandra-douglass-2026" target="_blank" rel="noopener">photos.app.goo.gl/alejandra-douglass-2026</a><!-- PENDIENTE: URL real del álbum compartido de Google Fotos -->
@@ -1772,7 +1913,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       </svg>
       <img class="footer-monogram" src="monograma.png" alt="Monograma Alejandra &amp; Douglass" loading="lazy">
       <div class="footer-names">Alejandra <span class="amp">&amp;</span> Douglass</div>
-      <div class="footer-date">X · X · 2026 · Barranquilla</div>
+      <div class="footer-date">Sábado · 10 · Octubre · 2026</div>
       <div class="footer-credit">
         <span class="credit-label">Invitación diseñada por</span>
         <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="credit-handle">
@@ -1927,23 +2068,10 @@ gsap.to('.hero-bg-wrap',{yPercent:18,ease:'none',scrollTrigger:{trigger:'.hero',
 gsap.to('.hero-content',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
 
 // ------ VERSO — word-by-word (sin blur) ------
-const verseWords = splitToWords(document.querySelector('.verse-text'));
-gsap.fromTo('.verse-ornament',{opacity:0,y:30,scale:.9},{opacity:1,y:0,scale:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.verse-wrap',start:'top 80%'}});
-gsap.fromTo('.verse-quote',{opacity:0,scale:.5,rotate:-10},{opacity:.8,scale:1,rotate:0,duration:1.3,ease:'back.out(1.4)',scrollTrigger:{trigger:'.verse-wrap',start:'top 80%'}});
-gsap.fromTo(verseWords,{opacity:0,y:24},{opacity:1,y:0,duration:.9,stagger:.05,ease:'power3.out',scrollTrigger:{trigger:'.verse-text',start:'top 82%'}});
-gsap.fromTo('.verse-sig',{opacity:0,y:20,scaleX:.6},{opacity:1,y:0,scaleX:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.verse-sig',start:'top 88%'}});
-
-// ------ DATE HERO — count-up ------
-document.querySelectorAll('[data-count-to]').forEach(el=>{
-  const to = parseInt(el.dataset.countTo,10);
-  const obj = {v:0};
-  gsap.to(obj,{v:to,duration:2,ease:'power3.out',
-    onUpdate:()=>{el.textContent = Math.round(obj.v)},
-    scrollTrigger:{trigger:el,start:'top 80%'}});
-});
-gsap.fromTo('.date-h',{opacity:0,scale:.92,y:30},{opacity:1,scale:1,y:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'.date-h',start:'top 80%'}});
-gsap.fromTo('.date-block',{opacity:0,y:40},{opacity:1,y:0,duration:1.2,stagger:.15,ease:'power4.out',scrollTrigger:{trigger:'.date-numbers',start:'top 80%'}});
-gsap.fromTo('.date-roman',{opacity:0,letterSpacing:'1em'},{opacity:1,letterSpacing:'.4em',duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.date-roman',start:'top 85%'}});
+// ------ DATE HERO ------
+gsap.fromTo('.date-h',{opacity:0,y:26},{opacity:1,y:0,duration:1.3,ease:'power3.out',scrollTrigger:{trigger:'.date-h',start:'top 82%'}});
+gsap.fromTo('.date-line',{opacity:0,y:18},{opacity:1,y:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'.date-line',start:'top 85%'}});
+gsap.fromTo('.date-place-lbl',{opacity:0},{opacity:1,duration:1.2,scrollTrigger:{trigger:'.date-place-lbl',start:'top 88%'}});
 gsap.fromTo('.date-eyebrow',{opacity:0,y:10},{opacity:1,y:0,duration:.9,scrollTrigger:{trigger:'.date-eyebrow',start:'top 82%'}});
 
 // ------ STORY — line reveal (sin blur) ------
@@ -1953,7 +2081,6 @@ document.querySelectorAll('[data-reveal="line"]').forEach(p=>{
 gsap.fromTo('.story-ornament',{opacity:0,scaleX:0},{opacity:.6,scaleX:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.story-ornament',start:'top 85%'}});
 gsap.fromTo('.story .hair-word',{opacity:0,y:12},{opacity:1,y:0,duration:1,scrollTrigger:{trigger:'.story .hair-word',start:'top 85%'}});
 gsap.fromTo('.story h2',{opacity:0,y:28},{opacity:1,y:0,duration:1.3,ease:'power3.out',scrollTrigger:{trigger:'.story h2',start:'top 80%'}});
-gsap.fromTo('.story-initials',{opacity:0,scale:.6,rotate:-8},{opacity:1,scale:1,rotate:0,duration:1.4,ease:'back.out(1.4)',scrollTrigger:{trigger:'.story-initials',start:'top 85%'}});
 
 // ------ LOCATIONS ------
 gsap.fromTo('.locs .eyebrow',{opacity:0,y:10},{opacity:1,y:0,duration:.9,scrollTrigger:{trigger:'.locs',start:'top 80%'}});
@@ -2064,8 +2191,19 @@ gsap.fromTo('.countdown .eyebrow, .countdown h2, .countdown-sub',{opacity:0,y:14
   });
 })();
 
+// ------ PAUSAS CINEMATOGRAFICAS ------
+document.querySelectorAll('.cine img, .cine video').forEach(el=>{
+  gsap.fromTo(el,{scale:1.08},{scale:1,duration:2.2,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'}});
+});
+document.querySelectorAll('.cine-caption > span').forEach((el,i)=>{
+  gsap.fromTo(el,{opacity:0,y:16},{opacity:1,y:0,duration:1.1,delay:i*.18,ease:'power3.out',scrollTrigger:{trigger:el.parentElement,start:'top 88%'}});
+});
+gsap.utils.toArray('.detail-band img').forEach((el,i)=>{
+  gsap.fromTo(el,{opacity:0},{opacity:.92,duration:1.2,delay:i*.15,scrollTrigger:{trigger:'.detail-band',start:'top 88%'}});
+});
+
 // ------ DRESS ------
-gsap.fromTo('.dress-fig',{opacity:0,scale:.4,y:30},{opacity:1,scale:1,y:0,duration:1.1,stagger:.1,ease:'elastic.out(1,.6)',scrollTrigger:{trigger:'.dress-figures',start:'top 82%'}});
+gsap.fromTo('.dress-fig',{opacity:0,y:24},{opacity:1,scale:1,y:0,duration:1.2,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.dress-figures',start:'top 82%'}});
 gsap.fromTo('.dress .eyebrow, .dress h2, .dress-sub, .dress-note',{opacity:0,y:14},{opacity:1,y:0,duration:.9,stagger:.08,scrollTrigger:{trigger:'.dress',start:'top 78%'}});
 
 // ------ GALLERY — 3D WHEEL (drag para girar) ------
@@ -2078,7 +2216,7 @@ function initWheel(){
   const cards = ring.querySelectorAll('.wheel-card');
   const n = cards.length;
   if(!n) return;
-  const radius = window.innerWidth < 520 ? 170 : 210;
+  const radius = (window.innerWidth < 520 ? 170 : 210) * (n > 6 ? 1.32 : 1);
   let rot = 0, vel = 0, isDrag = false, startX = 0, startRot = 0, lastX = 0, rafId = null;
 
   cards.forEach((card, i)=>{
@@ -2166,9 +2304,6 @@ function initWheel(){
   }
 
   (function(){
-    const dBtn = document.getElementById('dress-desc-btn');
-    const dCard = document.getElementById('dress-desc-card');
-    const dClose = document.getElementById('dress-desc-close');
     if(!dBtn || !dCard || !dClose) return;
     function openDress(){
       dCard.hidden = false;
@@ -2299,21 +2434,21 @@ function lineDiv(){
 function launchPollen(){
   const el = pollenDiv();
   el.style.left = Math.random()*vw()+'px';
-  const dur = 24 + Math.random()*14;
+  const dur = 46 + Math.random()*22;
   const drift = (Math.random()-.5)*140;
   particlesContainer.appendChild(el);
   gsap.to(el,{y:vh()+40,x:`+=${drift}`,duration:dur,ease:'power1.inOut',
-    onComplete:()=>{el.remove();setTimeout(launchPollen,Math.random()*3500)}});
-  gsap.fromTo(el,{opacity:0},{opacity:.85,duration:2,ease:'sine.out'});
+    onComplete:()=>{el.remove();setTimeout(launchPollen,4000+Math.random()*7000)}});
+  gsap.fromTo(el,{opacity:0},{opacity:.42,duration:4,ease:'sine.out'});
 }
 function launchSpark(){
   const el = sparkDiv();
   el.style.left = Math.random()*vw()+'px';
   el.style.top = Math.random()*vh()*.85+'px';
   particlesContainer.appendChild(el);
-  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(launchSpark,Math.random()*2500)}});
-  tl.fromTo(el,{opacity:0,scale:.4},{opacity:1,scale:1.6,duration:.5,ease:'power2.out'})
-    .to(el,{opacity:0,scale:.2,duration:.7,ease:'power2.in'});
+  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(launchSpark,6000+Math.random()*9000)}});
+  tl.fromTo(el,{opacity:0,scale:.4},{opacity:.55,scale:1.2,duration:1.6,ease:'sine.out'})
+    .to(el,{opacity:0,scale:.2,duration:2.2,ease:'sine.in'});
 }
 function launchStar(big){
   const el = starSvg(big);
@@ -2321,30 +2456,30 @@ function launchStar(big){
   const startY = Math.random()*vh()*.6;
   el.style.top = startY+'px';
   particlesContainer.appendChild(el);
-  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(()=>launchStar(big),Math.random()*3500+1000)}});
-  const finalOp = big ? .5 : .7;
-  tl.fromTo(el,{opacity:0,scale:.3,rotate:0},{opacity:finalOp,scale:1,rotate:180,duration:1.4,ease:'power2.out'})
+  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(()=>launchStar(big),7000+Math.random()*9000)}});
+  const finalOp = big ? .22 : .3;
+  tl.fromTo(el,{opacity:0,scale:.3,rotate:0},{opacity:finalOp,scale:1,rotate:180,duration:2.6,ease:'sine.out'})
     .to(el,{y:`+=${40+Math.random()*60}`,x:`+=${(Math.random()-.5)*60}`,duration:3,ease:'sine.inOut'},0)
     .to(el,{opacity:0,scale:.4,rotate:360,duration:1.4,ease:'power2.in'},'-=.8');
 }
 function launchLine(){
   const el = lineDiv();
   el.style.left = Math.random()*vw()+'px';
-  const dur = 14 + Math.random()*8;
+  const dur = 30 + Math.random()*14;
   const drift = (Math.random()-.5)*80;
   particlesContainer.appendChild(el);
-  gsap.fromTo(el,{opacity:0},{opacity:.28,duration:1.5});
+  gsap.fromTo(el,{opacity:0},{opacity:.14,duration:3});
   gsap.to(el,{y:vh()+40,x:`+=${drift}`,rotation:(Math.random()-.5)*30,duration:dur,ease:'power1.inOut',
-    onComplete:()=>{el.remove();setTimeout(launchLine,Math.random()*4000)}});
+    onComplete:()=>{el.remove();setTimeout(launchLine,8000+Math.random()*9000)}});
 }
 
 function startParticles(){
   if(prefersReduced) return;
-  for(let i=0;i<10;i++) setTimeout(launchPollen,i*700+200);
-  for(let i=0;i<8;i++) setTimeout(launchSpark,i*550+300);
-  for(let i=0;i<10;i++) setTimeout(()=>launchStar(false),i*900+500);
-  for(let i=0;i<4;i++) setTimeout(()=>launchStar(true),i*1800+800);
-  for(let i=0;i<4;i++) setTimeout(launchLine,i*1100+600);
+  for(let i=0;i<3;i++) setTimeout(launchPollen,i*2600+600);
+  for(let i=0;i<2;i++) setTimeout(launchSpark,i*3200+1400);
+  for(let i=0;i<3;i++) setTimeout(()=>launchStar(false),i*3000+1800);
+  for(let i=0;i<1;i++) setTimeout(()=>launchStar(true),i*5200+2600);
+  for(let i=0;i<1;i++) setTimeout(launchLine,i*4200+2200);
 }
 
 // ------ SCROLL LIMIT — tope exacto en footer ------
