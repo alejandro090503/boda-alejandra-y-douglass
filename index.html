@@ -146,7 +146,7 @@ h1 em,h2 em,h3 em{font-style:normal;font-weight:500;color:var(--accent)}
 @keyframes loaderBar{to{transform:translateX(100%)}}
 
 /* ============ PARTÍCULAS — estrellas + polen + sparkles + líneas (sin copos) ============ */
-#particles{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden;contain:strict}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:55;overflow:hidden;contain:strict}
 .particle{position:absolute;top:-40px;pointer-events:none;will-change:transform,opacity}
 .particle--pollen{
   width:6px;height:6px;border-radius:50%;
@@ -698,6 +698,21 @@ h1 em,h2 em,h3 em{font-style:normal;font-weight:500;color:var(--accent)}
 .env-desc{font-family:var(--serif);font-size:14px;font-style:normal;color:var(--ink-soft);line-height:1.75}
 .env-tap-hint{font-family:var(--serif);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);opacity:.75;margin-top:14px;transition:opacity .3s;text-align:center}
 .env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none}
+.env-wax{
+  position:absolute;left:50%;bottom:-27px;transform:translateX(-50%);
+  width:54px;height:54px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 34% 30%, #8d1f33 0%, #6b1526 55%, #4d0f1c 100%);
+  box-shadow:0 3px 10px rgba(28,11,16,.38), inset 0 0 0 1px rgba(232,213,160,.45);
+  z-index:3;pointer-events:none;
+  transition:opacity .3s ease;
+}
+.env-wax::after{
+  content:"";position:absolute;inset:4px;border-radius:50%;
+  border:1px dashed rgba(232,213,160,.5);
+}
+.env-wax img{width:30px;height:30px;object-fit:contain;filter:brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg) opacity(.92);}
+.env-interactive.open .env-wax{opacity:0;transition:opacity .25s ease}
 @keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 @media(prefers-reduced-motion:reduce){.env-body{animation:none}}
 
@@ -1803,8 +1818,8 @@ body{font-weight:400}
         <div class="wheel-card"><img src="p03.jpg" alt="Alejandra y Douglass" loading="eager"></div>
         <div class="wheel-card"><img src="p10.jpg" alt="Alejandra y Douglass" loading="eager"></div>
         <div class="wheel-card"><img src="p05.jpg" alt="Alejandra y Douglass" loading="eager"></div>
-        <div class="wheel-card"><img src="foto2.jpg" alt="Alejandra y Douglass" loading="eager"></div>
-        <div class="wheel-card"><img src="foto4.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+        <div class="wheel-card"><img src="p02.jpg" alt="Alejandra y Douglass" loading="eager"></div>
+        <div class="wheel-card"><img src="p04.jpg" alt="Alejandra y Douglass" loading="eager"></div>
       </div>
     </div>
     <p class="gal-hint">Arrastra para girar</p>
@@ -1872,6 +1887,7 @@ body{font-weight:400}
               <path d="M0 0 L112 86 L224 0 Z"
                     fill="url(#ad-flap-fill)" stroke="var(--hair-gold)" stroke-width="1.5" stroke-linejoin="round"/>
             </svg>
+            <span class="env-wax"><img src="monograma.png" alt="" aria-hidden="true" loading="eager"></span>
           </div>
         </div>
         <div class="env-open-content" aria-live="polite">
@@ -2354,21 +2370,8 @@ function initWheel(){
       }});
   }
 
-  (function(){
-    if(!dBtn || !dCard || !dClose) return;
-    function openDress(){
-      dCard.hidden = false;
-      dBtn.setAttribute('aria-expanded','true');
-      dBtn.textContent = 'Ocultar descripción';
-    }
-    function closeDress(){
-      dCard.hidden = true;
-      dBtn.setAttribute('aria-expanded','false');
-      dBtn.textContent = 'Ver descripción';
-    }
-    dBtn.addEventListener('click', ()=> dCard.hidden ? openDress() : closeDress());
-    dClose.addEventListener('click', closeDress);
-  })();
+  /* Bloque dress-code eliminado: dBtn/dCard/dClose nunca se declararon y el
+     ReferenceError abortaba el resto del script (partículas incluidas). */
 
   document.querySelectorAll('.wheel-card').forEach(el=>{
     const img = el.querySelector('img');
@@ -2485,21 +2488,21 @@ function lineDiv(){
 function launchPollen(){
   const el = pollenDiv();
   el.style.left = Math.random()*vw()+'px';
-  const dur = 46 + Math.random()*22;
+  const dur = 18 + Math.random()*10;
   const drift = (Math.random()-.5)*140;
   particlesContainer.appendChild(el);
   gsap.to(el,{y:vh()+40,x:`+=${drift}`,duration:dur,ease:'power1.inOut',
-    onComplete:()=>{el.remove();setTimeout(launchPollen,4000+Math.random()*7000)}});
-  gsap.fromTo(el,{opacity:0},{opacity:.42,duration:4,ease:'sine.out'});
+    onComplete:()=>{el.remove();setTimeout(launchPollen,1500+Math.random()*2500)}});
+  gsap.fromTo(el,{opacity:0},{opacity:.8,duration:2,ease:'sine.out'});
 }
 function launchSpark(){
   const el = sparkDiv();
   el.style.left = Math.random()*vw()+'px';
   el.style.top = Math.random()*vh()*.85+'px';
   particlesContainer.appendChild(el);
-  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(launchSpark,6000+Math.random()*9000)}});
-  tl.fromTo(el,{opacity:0,scale:.4},{opacity:.55,scale:1.2,duration:1.6,ease:'sine.out'})
-    .to(el,{opacity:0,scale:.2,duration:2.2,ease:'sine.in'});
+  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(launchSpark,1500+Math.random()*2500)}});
+  tl.fromTo(el,{opacity:0,scale:.4},{opacity:.9,scale:1.3,duration:1.1,ease:'sine.out'})
+    .to(el,{opacity:0,scale:.2,duration:1.4,ease:'sine.in'});
 }
 function launchStar(big){
   const el = starSvg(big);
@@ -2507,30 +2510,30 @@ function launchStar(big){
   const startY = Math.random()*vh()*.6;
   el.style.top = startY+'px';
   particlesContainer.appendChild(el);
-  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(()=>launchStar(big),7000+Math.random()*9000)}});
-  const finalOp = big ? .22 : .3;
-  tl.fromTo(el,{opacity:0,scale:.3,rotate:0},{opacity:finalOp,scale:1,rotate:180,duration:2.6,ease:'sine.out'})
-    .to(el,{y:`+=${40+Math.random()*60}`,x:`+=${(Math.random()-.5)*60}`,duration:3,ease:'sine.inOut'},0)
-    .to(el,{opacity:0,scale:.4,rotate:360,duration:1.4,ease:'power2.in'},'-=.8');
+  const tl = gsap.timeline({onComplete:()=>{el.remove();setTimeout(()=>launchStar(big),1500+Math.random()*2500)}});
+  const finalOp = big ? .5 : .6;
+  tl.fromTo(el,{opacity:0,scale:.3,rotate:0},{opacity:finalOp,scale:1,rotate:180,duration:1.6,ease:'sine.out'})
+    .to(el,{y:`+=${70+Math.random()*90}`,x:`+=${(Math.random()-.5)*80}`,duration:6,ease:'sine.inOut'},0)
+    .to(el,{opacity:0,scale:.4,rotate:360,duration:1.6,ease:'power2.in'},'-=.4');
 }
 function launchLine(){
   const el = lineDiv();
   el.style.left = Math.random()*vw()+'px';
-  const dur = 30 + Math.random()*14;
+  const dur = 16 + Math.random()*8;
   const drift = (Math.random()-.5)*80;
   particlesContainer.appendChild(el);
-  gsap.fromTo(el,{opacity:0},{opacity:.14,duration:3});
+  gsap.fromTo(el,{opacity:0},{opacity:.3,duration:1.6});
   gsap.to(el,{y:vh()+40,x:`+=${drift}`,rotation:(Math.random()-.5)*30,duration:dur,ease:'power1.inOut',
-    onComplete:()=>{el.remove();setTimeout(launchLine,8000+Math.random()*9000)}});
+    onComplete:()=>{el.remove();setTimeout(launchLine,1500+Math.random()*2500)}});
 }
 
 function startParticles(){
   if(prefersReduced) return;
-  for(let i=0;i<3;i++) setTimeout(launchPollen,i*2600+600);
-  for(let i=0;i<2;i++) setTimeout(launchSpark,i*3200+1400);
-  for(let i=0;i<3;i++) setTimeout(()=>launchStar(false),i*3000+1800);
-  for(let i=0;i<1;i++) setTimeout(()=>launchStar(true),i*5200+2600);
-  for(let i=0;i<1;i++) setTimeout(launchLine,i*4200+2200);
+  for(let i=0;i<4;i++) setTimeout(launchPollen,i*700+300);
+  for(let i=0;i<3;i++) setTimeout(launchSpark,i*900+600);
+  for(let i=0;i<3;i++) setTimeout(()=>launchStar(false),i*1100+800);
+  for(let i=0;i<1;i++) setTimeout(()=>launchStar(true),i*1300+1200);
+  for(let i=0;i<2;i++) setTimeout(launchLine,i*1200+900);
 }
 
 // ------ SCROLL LIMIT — tope exacto en footer ------
