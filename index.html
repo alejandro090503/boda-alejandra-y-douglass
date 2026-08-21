@@ -1387,28 +1387,26 @@ body{font-weight:400}
 /* ---- Vitrina Old World: halo difuso + figura flotante ---- */
 .dress-card{
   position:relative;width:100%;height:clamp(310px,41vw,440px);
-  padding:0;border:none;background:none;box-shadow:none;filter:none;
+  padding:0 0 7%;border:none;background:none;box-shadow:none;filter:none;
   -webkit-mask-image:none;mask-image:none;
   display:flex;align-items:flex-end;justify-content:center;
   overflow:visible;isolation:isolate;
   transition:transform .7s cubic-bezier(.22,.8,.24,1);
 }
-/* halo champagne: gradiente + blur real => sin un solo borde duro */
+/* marco rectangular con bordes difuminados (blur real sobre el rectangulo) */
 .dress-card::before{
   content:"";position:absolute;z-index:0;pointer-events:none;
-  left:50%;top:2%;transform:translateX(-50%);
-  width:82%;height:94%;
-  border-radius:46% 46% 40% 40% / 54% 54% 46% 46%;
-  background:radial-gradient(56% 60% at 50% 40%,
-    #FAEFD3 0%, #F2E1B4 30%, #E4CE9C 52%, rgba(198,168,104,.60) 72%, rgba(150,120,66,.22) 88%, rgba(118,94,52,0) 100%);
-  filter:blur(18px);
-  opacity:.97;
-  transition:opacity .7s ease, filter .7s ease;
+  inset:14px 10px 10px;
+  border-radius:4px;
+  background:linear-gradient(165deg, #FAEFD3 0%, #F2E1B4 38%, #E6D09E 70%, #D8C08A 100%);
+  filter:blur(11px);
+  opacity:.98;
+  transition:filter .7s ease, opacity .7s ease;
 }
 /* charco de sombra que aterriza la figura y respira con ella */
 .dress-card::after{
   content:"";position:absolute;z-index:1;pointer-events:none;
-  left:50%;bottom:5%;transform:translateX(-50%);
+  left:50%;bottom:9%;transform:translateX(-50%);
   width:50%;height:16px;border-radius:50%;
   background:radial-gradient(50% 50% at 50% 50%, rgba(48,33,12,.60) 0%, rgba(48,33,12,.28) 48%, rgba(48,33,12,0) 72%);
   filter:blur(5px);
@@ -1417,7 +1415,7 @@ body{font-weight:400}
 /* la figura va POR ENCIMA del halo y sin mascara: nunca se recorta */
 .dress-fig .dress-card img{
   position:relative;z-index:2;
-  height:95%!important;width:100%!important;max-width:100%;
+  height:86%!important;width:100%!important;max-width:100%;
   object-fit:contain;object-position:center bottom;
   filter:drop-shadow(0 12px 20px rgba(52,36,12,.38))!important;
   animation:dressFloat 6.4s ease-in-out infinite;
