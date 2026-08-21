@@ -1381,14 +1381,36 @@ body{font-weight:400}
 @media(prefers-reduced-motion:reduce){.xfade .xf{transition:none}}
 
 /* --- DRESS CODE: cards color "Her" --- */
+.dress-figures{align-items:flex-start!important}
+.dress-fig{flex:1 1 0!important;min-width:0}
 .dress-card{
-  background:var(--gold-soft);
-  padding:clamp(16px,3.5vw,26px) clamp(12px,3vw,20px) 0;
-  border:1px solid rgba(120,95,45,.35);
+  position:relative;width:100%;height:clamp(300px,40vw,430px);
+  padding:clamp(14px,3vw,22px) clamp(10px,2.5vw,18px) 0;
+  border:none;border-radius:3px;
   display:flex;align-items:flex-end;justify-content:center;
-  box-shadow:0 14px 34px -14px rgba(0,0,0,.55);
+  background:
+    radial-gradient(135% 95% at 50% 22%, #F6E7BF 0%, #EBD5A2 45%, #DCC888 100%);
+  filter:drop-shadow(0 18px 34px rgba(0,0,0,.55)) drop-shadow(0 0 20px rgba(223,201,147,.10));
+  -webkit-mask-image:
+    linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.35) 3%,#000 14%,#000 84%,rgba(0,0,0,.45) 95%,transparent 100%),
+    linear-gradient(to right,transparent 0%,rgba(0,0,0,.35) 2%,#000 13%,#000 87%,rgba(0,0,0,.35) 98%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.35) 3%,#000 14%,#000 84%,rgba(0,0,0,.45) 95%,transparent 100%),
+    linear-gradient(to right,transparent 0%,rgba(0,0,0,.35) 2%,#000 13%,#000 87%,rgba(0,0,0,.35) 98%,transparent 100%);
+  mask-composite:intersect;
 }
-.dress-fig .dress-card img{filter:drop-shadow(0 6px 12px rgba(60,45,20,.28))!important}
+/* halo interior suave que despega la figura del borde */
+.dress-card::before{
+  content:"";position:absolute;inset:0;border-radius:3px;pointer-events:none;
+  background:radial-gradient(90% 70% at 50% 100%, rgba(140,110,55,.22) 0%, transparent 62%);
+}
+.dress-fig .dress-card img{
+  position:relative;z-index:1;
+  height:100%!important;width:100%!important;max-width:100%;
+  object-fit:contain;object-position:center bottom;
+  filter:drop-shadow(0 8px 16px rgba(60,45,20,.30))!important;
+}
 
 /* --- BORGONA COMO ACENTO (visible sin hover, tambien en movil) --- */
 /* 1. filete corto bajo cada eyebrow de seccion */
@@ -1769,7 +1791,6 @@ body{font-weight:400}
   <section class="section-bg dress">
     <div class="container">
       <h2 class="dress-h">Old World <em>Elegance</em></h2>
-      <div class="dress-sub">Black Tie Preferred</div>
       <div class="dress-figures">
         <div class="dress-fig">
           <span class="dress-fig-label">Her</span>
@@ -1780,7 +1801,7 @@ body{font-weight:400}
         <div class="dress-fig">
           <span class="dress-fig-label">Him</span>
           <div class="dress-card"><img src="caballero.png" alt="Caballero, traje formal negro" loading="lazy"></div>
-          <span class="dress-fig-sub">Traje entero negro, camisa blanca</span>
+          <span class="dress-fig-sub">Traje entero negro, camisa blanca, corbata negra</span>
         </div>
       </div>
       <p class="dress-avoid-title">Tonos reservados</p>
