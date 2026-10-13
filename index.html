@@ -753,6 +753,13 @@ h1 em,h2 em,h3 em{font-style:normal;font-weight:500;color:var(--accent)}
   transition:color .4s,border-color .4s;
 }
 .album-link:hover{color:var(--accent-deep);border-bottom-color:var(--accent-deep)}
+/* Álbum: bloqueado (blur) hasta el día del evento */
+.album-qr img{transition:filter .4s,opacity .4s}
+.album-qr.bloqueado img{filter:blur(7px);opacity:.75}
+.album.bloqueado .album-btn{pointer-events:none;opacity:.45 !important}
+.album-qr.bloqueado a{pointer-events:none}
+.album-aviso{display:none;font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.6;color:var(--ink);max-width:460px;margin:22px auto 0}
+.album.bloqueado .album-aviso{display:block}
 
 /* ============ RSVP ============ */
 .rsvp{text-align:center;position:relative;overflow:hidden}
@@ -2002,12 +2009,13 @@ body{font-weight:400}
     <div class="container album-inner">
       <div class="eyebrow">Álbum compartido</div>
       <h2>Comparte <em>tus</em> fotos con nosotros</h2>
-      <p class="album-text">Escanea el código QR con tu cámara para subir tus fotos al álbum del evento. Queremos vivir el día desde tus ojos también.</p>
-      <div class="album-qr" id="qr-wrap">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScb4ro36HNEFluOw768kNEGh-IxoLztAfjFnlMlmVkXfODIhg/viewform" target="_blank" rel="noopener" aria-label="Abrir el álbum para subir tus fotos"><img src="album-qr.png" alt="Código QR para subir tus fotos al álbum" width="300" height="300" loading="lazy"></a>
+      <p class="album-text">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
+      <div class="album-qr" id="qr-wrap" data-fecha="2026-10-10">
+        <a href="/album" aria-label="Abrir el álbum para subir tus fotos"><img src="qr-album.png" alt="Código QR del álbum de fotos" width="300" height="300"></a>
       </div>
       <br>
-      <a class="album-link" href="https://docs.google.com/forms/d/e/1FAIpQLScb4ro36HNEFluOw768kNEGh-IxoLztAfjFnlMlmVkXfODIhg/viewform" target="_blank" rel="noopener">Subir mis fotos</a>
+      <a class="album-link album-btn" href="/album">Subir mis fotos</a>
+      <p class="album-aviso">El álbum de fotos se habilita el día del evento. Regresa aquí y sube todas tus fotos de la noche ✨</p>
     </div>
   </section>
 
@@ -2515,6 +2523,12 @@ gsap.fromTo('.env-interactive',{opacity:0,y:40,scale:.94},{opacity:1,y:0,scale:1
   });
 })();
 
+// ------ Álbum: se desbloquea el día del evento (la base además rechaza fotos antes) ------
+(function(){
+  var box=document.querySelector('.album-qr[data-fecha]'); if(!box) return;
+  var p=box.dataset.fecha.split('-'), abre=new Date(+p[0],+p[1]-1,+p[2],0,0,0);
+  if(new Date()<abre){ box.classList.add('bloqueado'); box.closest('.album').classList.add('bloqueado'); }
+})();
 // ------ QR scan line ------
 const qrWrap = document.getElementById('qr-wrap');
 ScrollTrigger.create({trigger:qrWrap,start:'top 80%',once:true,onEnter:()=>qrWrap.classList.add('scanning')});
